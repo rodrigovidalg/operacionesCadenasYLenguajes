@@ -427,12 +427,12 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             AFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AFDLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(txt_simulador_afd, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_simulador_afd, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_simular_afd)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         jScrollPane5.getAccessibleContext().setAccessibleName("");
