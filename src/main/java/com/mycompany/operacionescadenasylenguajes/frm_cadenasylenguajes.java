@@ -75,6 +75,10 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
         btn_kleene_l1 = new javax.swing.JButton();
         txt_positiva_l1 = new javax.swing.JTextField();
         btn_positiva_l1 = new javax.swing.JButton();
+        lenguaje1apertura = new javax.swing.JLabel();
+        lenguaje1cierre = new javax.swing.JLabel();
+        lenguaje2apertura = new javax.swing.JLabel();
+        lenguaje2cierre = new javax.swing.JLabel();
         AFD = new javax.swing.JPanel();
         txt_simulador_afd = new javax.swing.JTextField();
         btn_simular_afd = new javax.swing.JToggleButton();
@@ -85,6 +89,13 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTabbedPane1.setBackground(new java.awt.Color(0, 0, 0));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+
+        Cadenas.setBackground(new java.awt.Color(0, 0, 0));
+
+        txt_cadena_izq.setBackground(new java.awt.Color(51, 51, 51));
+        txt_cadena_izq.setForeground(new java.awt.Color(204, 204, 180));
         txt_cadena_izq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_cadena_izqActionPerformed(evt);
@@ -92,6 +103,8 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(txt_cadena_izq);
 
+        btn_procesar.setBackground(new java.awt.Color(102, 102, 102));
+        btn_procesar.setForeground(new java.awt.Color(255, 255, 255));
         btn_procesar.setText("Procesar");
         btn_procesar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,10 +112,18 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             }
         });
 
+        lbl_longitud_izq.setForeground(new java.awt.Color(255, 255, 255));
         lbl_longitud_izq.setText("Longitud:");
 
+        n_longitud_izq.setForeground(new java.awt.Color(255, 255, 255));
+
+        lbl_cadenainvertida_izq.setForeground(new java.awt.Color(255, 255, 255));
         lbl_cadenainvertida_izq.setText("Cadenas Invertida:");
 
+        n_cadena_invertida_izq.setForeground(new java.awt.Color(255, 255, 255));
+
+        txt_cadena_der.setBackground(new java.awt.Color(51, 51, 51));
+        txt_cadena_der.setForeground(new java.awt.Color(204, 204, 180));
         txt_cadena_der.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_cadena_derActionPerformed(evt);
@@ -110,12 +131,23 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(txt_cadena_der);
 
+        lbl_longitud_der.setForeground(new java.awt.Color(255, 255, 255));
         lbl_longitud_der.setText("Longitud:");
 
+        n_longitud_der.setForeground(new java.awt.Color(255, 255, 255));
+
+        lbl_cadenainvertida_der.setForeground(new java.awt.Color(255, 255, 255));
         lbl_cadenainvertida_der.setText("Cadenas Invertida:");
 
+        n_cadena_invertida_der.setForeground(new java.awt.Color(255, 255, 255));
+
+        lbl_concatenacion.setForeground(new java.awt.Color(255, 255, 255));
         lbl_concatenacion.setText("Concatenación:");
 
+        n_concatenacion.setForeground(new java.awt.Color(255, 255, 255));
+
+        btn_concatenar.setBackground(new java.awt.Color(102, 102, 102));
+        btn_concatenar.setForeground(new java.awt.Color(255, 255, 255));
         btn_concatenar.setText("Concatenar cadenas");
         btn_concatenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,6 +155,11 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             }
         });
 
+        txt_potencia_izq.setBackground(new java.awt.Color(51, 51, 51));
+        txt_potencia_izq.setForeground(new java.awt.Color(255, 255, 255));
+
+        btn_potencia_izq.setBackground(new java.awt.Color(102, 102, 102));
+        btn_potencia_izq.setForeground(new java.awt.Color(255, 255, 255));
         btn_potencia_izq.setText("Potencia cadena izq");
         btn_potencia_izq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,6 +169,11 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
         jScrollPane3.setViewportView(n_potencia_izq);
 
+        txt_potencia_der.setBackground(new java.awt.Color(51, 51, 51));
+        txt_potencia_der.setForeground(new java.awt.Color(255, 255, 255));
+
+        btn_potencia_der.setBackground(new java.awt.Color(102, 102, 102));
+        btn_potencia_der.setForeground(new java.awt.Color(255, 255, 255));
         btn_potencia_der.setText("Potencia cadena der");
         btn_potencia_der.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,7 +241,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         CadenasLayout.setVerticalGroup(
             CadenasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,7 +293,18 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Cadenas", Cadenas);
 
-        btn_union.setText("∪");
+        Lenguajes.setBackground(new java.awt.Color(0, 0, 0));
+
+        txt_lenguaje1.setBackground(new java.awt.Color(51, 51, 51));
+        txt_lenguaje1.setForeground(new java.awt.Color(255, 255, 255));
+        txt_lenguaje1.setFocusCycleRoot(true);
+
+        txt_lenguaje2.setBackground(new java.awt.Color(51, 51, 51));
+        txt_lenguaje2.setForeground(new java.awt.Color(255, 255, 255));
+
+        btn_union.setBackground(new java.awt.Color(102, 102, 102));
+        btn_union.setForeground(new java.awt.Color(255, 255, 255));
+        btn_union.setText("L₁∪L₂");
         btn_union.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_unionActionPerformed(evt);
@@ -259,46 +312,67 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
         });
 
         txt_resultado_lenguajes.setEditable(false);
+        txt_resultado_lenguajes.setBackground(new java.awt.Color(51, 51, 51));
         txt_resultado_lenguajes.setColumns(20);
+        txt_resultado_lenguajes.setForeground(new java.awt.Color(255, 255, 255));
         txt_resultado_lenguajes.setLineWrap(true);
         txt_resultado_lenguajes.setRows(5);
         jScrollPane6.setViewportView(txt_resultado_lenguajes);
 
-        btn_interseccion.setText("∩");
+        btn_interseccion.setBackground(new java.awt.Color(102, 102, 102));
+        btn_interseccion.setForeground(new java.awt.Color(255, 255, 255));
+        btn_interseccion.setText("L₁∩L₂");
         btn_interseccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_interseccionActionPerformed(evt);
             }
         });
 
-        btn_diferencia.setText("diferencia");
+        btn_diferencia.setBackground(new java.awt.Color(102, 102, 102));
+        btn_diferencia.setForeground(new java.awt.Color(255, 255, 255));
+        btn_diferencia.setText("L₁-L₂");
         btn_diferencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_diferenciaActionPerformed(evt);
             }
         });
 
-        btn_concatenacion.setText("concatenar");
+        btn_concatenacion.setBackground(new java.awt.Color(102, 102, 102));
+        btn_concatenacion.setForeground(new java.awt.Color(255, 255, 255));
+        btn_concatenacion.setText("L₁·L₂");
         btn_concatenacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_concatenacionActionPerformed(evt);
             }
         });
 
-        btn_potencia_l1.setText("potencia");
+        btn_potencia_l1.setBackground(new java.awt.Color(102, 102, 102));
+        btn_potencia_l1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_potencia_l1.setText("L₁ⁿ");
+        btn_potencia_l1.setFocusCycleRoot(true);
         btn_potencia_l1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_potencia_l1ActionPerformed(evt);
             }
         });
 
-        btn_inversa_l1.setText("Inversa");
+        txt_potencia_l1.setBackground(new java.awt.Color(51, 51, 51));
+        txt_potencia_l1.setForeground(new java.awt.Color(255, 255, 255));
+
+        btn_inversa_l1.setBackground(new java.awt.Color(102, 102, 102));
+        btn_inversa_l1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_inversa_l1.setText("L₁'");
         btn_inversa_l1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_inversa_l1ActionPerformed(evt);
             }
         });
 
+        txt_kleene_l1.setBackground(new java.awt.Color(51, 51, 51));
+        txt_kleene_l1.setForeground(new java.awt.Color(255, 255, 255));
+
+        btn_kleene_l1.setBackground(new java.awt.Color(102, 102, 102));
+        btn_kleene_l1.setForeground(new java.awt.Color(255, 255, 255));
         btn_kleene_l1.setText("Cerradura de Kleene");
         btn_kleene_l1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -306,12 +380,29 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             }
         });
 
+        txt_positiva_l1.setBackground(new java.awt.Color(51, 51, 51));
+        txt_positiva_l1.setForeground(new java.awt.Color(255, 255, 255));
+
+        btn_positiva_l1.setBackground(new java.awt.Color(102, 102, 102));
+        btn_positiva_l1.setForeground(new java.awt.Color(255, 255, 255));
         btn_positiva_l1.setText("Cerradura Positiva de Kleene");
         btn_positiva_l1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_positiva_l1ActionPerformed(evt);
             }
         });
+
+        lenguaje1apertura.setForeground(new java.awt.Color(255, 255, 255));
+        lenguaje1apertura.setText("L₁ = {");
+
+        lenguaje1cierre.setForeground(new java.awt.Color(255, 255, 255));
+        lenguaje1cierre.setText("}");
+
+        lenguaje2apertura.setForeground(new java.awt.Color(255, 255, 255));
+        lenguaje2apertura.setText("L₂ = {");
+
+        lenguaje2cierre.setForeground(new java.awt.Color(255, 255, 255));
+        lenguaje2cierre.setText("}");
 
         javax.swing.GroupLayout LenguajesLayout = new javax.swing.GroupLayout(Lenguajes);
         Lenguajes.setLayout(LenguajesLayout);
@@ -321,9 +412,19 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(LenguajesLayout.createSequentialGroup()
-                        .addComponent(txt_lenguaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                        .addComponent(txt_lenguaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lenguaje1apertura)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_lenguaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lenguaje1cierre, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(lenguaje2apertura)
+                        .addGap(5, 5, 5)
+                        .addComponent(txt_lenguaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lenguaje2cierre)
+                        .addGap(23, 23, 23))
                     .addComponent(jScrollPane6)
                     .addGroup(LenguajesLayout.createSequentialGroup()
                         .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,11 +457,15 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
         LenguajesLayout.setVerticalGroup(
             LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LenguajesLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(38, 38, 38)
                 .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_lenguaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_lenguaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
+                    .addComponent(txt_lenguaje1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lenguaje1cierre, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lenguaje1apertura, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lenguaje2cierre, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lenguaje2apertura, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_lenguaje2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_potencia_l1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_potencia_l1)
@@ -379,19 +484,26 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
                     .addComponent(btn_interseccion)
                     .addComponent(btn_diferencia)
                     .addComponent(btn_concatenacion))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Lenguajes", Lenguajes);
 
+        AFD.setBackground(new java.awt.Color(0, 0, 0));
+        AFD.setForeground(new java.awt.Color(255, 255, 255));
+
+        txt_simulador_afd.setBackground(new java.awt.Color(51, 51, 51));
+        txt_simulador_afd.setForeground(new java.awt.Color(255, 255, 255));
         txt_simulador_afd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_simulador_afdActionPerformed(evt);
             }
         });
 
+        btn_simular_afd.setBackground(new java.awt.Color(102, 102, 102));
+        btn_simular_afd.setForeground(new java.awt.Color(255, 255, 255));
         btn_simular_afd.setText("Procesar");
         btn_simular_afd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -404,7 +516,9 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
         jScrollPane5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         txt_resultado_afd.setEditable(false);
+        txt_resultado_afd.setBackground(new java.awt.Color(51, 51, 51));
         txt_resultado_afd.setColumns(20);
+        txt_resultado_afd.setForeground(new java.awt.Color(255, 255, 255));
         txt_resultado_afd.setLineWrap(true);
         txt_resultado_afd.setRows(5);
         jScrollPane5.setViewportView(txt_resultado_afd);
@@ -416,9 +530,9 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             .addGroup(AFDLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AFDLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 404, Short.MAX_VALUE)
                         .addComponent(btn_simular_afd))
                     .addComponent(txt_simulador_afd, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -599,7 +713,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     private void btn_simular_afdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simular_afdActionPerformed
         // TODO add your handling code here:
         String cadena = this.txt_simulador_afd.getText().trim();
-        String estado = "q0"; // estado inicial
+        String estado = "q0";
         StringBuilder recorrido = new StringBuilder();
 
         recorrido.append("Simulación del AFD para cadena: ").append(cadena).append("\n\n");
@@ -655,7 +769,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             recorrido.append("-------------------------------------\n");
         }
 
-        // Resultado final
+        
         recorrido.append("\nEstado final: ").append(estado).append("\n");
         if (estado.equals("q2")) {
             recorrido.append("✅ La cadena es ACEPTADA (estado final q2)");
@@ -669,15 +783,12 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
     private void btn_unionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_unionActionPerformed
         // TODO add your handling code here:
-        
-        // Leer y dividir los lenguajes
         String l1Texto = this.txt_lenguaje1.getText().trim();
         String l2Texto = this.txt_lenguaje2.getText().trim();
 
         String[] l1Array = l1Texto.split(",");
         String[] l2Array = l2Texto.split(",");
 
-        // Usamos un Set para eliminar duplicados automáticamente
         Set<String> union = new LinkedHashSet<>();
 
         for (String elem : l1Array) {
@@ -692,19 +803,16 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             }
         }
 
-        // Construir texto de salida
         StringBuilder resultado = new StringBuilder("L1 ∪ L2 = { ");
         for (String palabra : union) {
             resultado.append(palabra).append(", ");
         }
 
-        // Quitar última coma y espacio si hay elementos
         if (!union.isEmpty()) {
             resultado.setLength(resultado.length() - 2);
         }
         resultado.append(" }");
 
-        // Mostrar en área de texto
         this.txt_resultado_lenguajes.setText(resultado.toString());
 
     }//GEN-LAST:event_btn_unionActionPerformed
@@ -757,7 +865,6 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
     private void btn_diferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_diferenciaActionPerformed
         // TODO add your handling code here:
-
         String l1Texto = this.txt_lenguaje1.getText().trim();
         String l2Texto = this.txt_lenguaje2.getText().trim();
 
@@ -768,7 +875,6 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
         Set<String> conjuntoL2 = new LinkedHashSet<>();
         Set<String> diferencia = new LinkedHashSet<>();
 
-        // Rellenar conjuntos
         for (String elem : l1Array) {
             if (!elem.trim().isEmpty()) {
                 conjuntoL1.add(elem.trim());
@@ -780,14 +886,12 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             }
         }
 
-        // Calcular diferencia: L1 - L2
         for (String palabra : conjuntoL1) {
             if (!conjuntoL2.contains(palabra)) {
                 diferencia.add(palabra);
             }
         }
 
-        // Mostrar resultado
         StringBuilder resultado = new StringBuilder("L1 - L2 = { ");
         for (String palabra : diferencia) {
             resultado.append(palabra).append(", ");
@@ -803,8 +907,6 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
     private void btn_concatenacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_concatenacionActionPerformed
         // TODO add your handling code here:
-        // TODO add your handling code here:
-
         String l1Texto = this.txt_lenguaje1.getText().trim();
         String l2Texto = this.txt_lenguaje2.getText().trim();
 
@@ -813,7 +915,6 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
         List<String> concatenados = new ArrayList<>();
 
-        // Limpiar entradas
         List<String> l1List = new ArrayList<>();
         List<String> l2List = new ArrayList<>();
 
@@ -828,14 +929,12 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             }
         }
 
-        // Concatenación: cada elemento de L1 con cada de L2
         for (String palabra1 : l1List) {
             for (String palabra2 : l2List) {
                 concatenados.add(palabra1 + palabra2);
             }
         }
 
-        // Construir resultado
         StringBuilder resultado = new StringBuilder("L1 · L2 = { ");
         for (String palabra : concatenados) {
             resultado.append(palabra).append(", ");
@@ -851,8 +950,6 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
     private void btn_potencia_l1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_potencia_l1ActionPerformed
         // TODO add your handling code here:
-        // TODO add your handling code here:
-
         String textoL1 = this.txt_lenguaje1.getText().trim();
         String potenciaTexto = this.txt_potencia_l1.getText().trim();
 
@@ -900,7 +997,6 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             }
         }
 
-        // Mostrar resultado
         StringBuilder sb = new StringBuilder("L1^" + n + " = { ");
         for (String palabra : resultado) {
             sb.append(palabra).append(", ");
@@ -915,8 +1011,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_potencia_l1ActionPerformed
 
     private void btn_inversa_l1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inversa_l1ActionPerformed
-        // TODO add your handling code here:
-        
+        // TODO add your handling code here:  
         String textoL1 = this.txt_lenguaje1.getText().trim();
         String[] elementos = textoL1.split(",");
 
@@ -948,8 +1043,6 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
     private void btn_kleene_l1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_kleene_l1ActionPerformed
         // TODO add your handling code here:
-        // TODO add your handling code here:
-
         String textoL1 = this.txt_lenguaje1.getText().trim();
         String limiteTexto = this.txt_kleene_l1.getText().trim();
 
@@ -978,7 +1071,6 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             }
         }
 
-        // Resultado de la cerradura
         Set<String> resultado = new LinkedHashSet<>();
         resultado.add("λ"); // L⁰ siempre contiene λ
 
@@ -998,7 +1090,6 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             potenciaActual = nuevaPotencia;
         }
 
-        // Mostrar resultado
         StringBuilder sb = new StringBuilder("L* hasta L^" + n + " = { ");
         for (String palabra : resultado) {
             sb.append(palabra).append(", ");
@@ -1042,7 +1133,6 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             }
         }
 
-        // Resultado de la cerradura positiva
         Set<String> resultado = new LinkedHashSet<>();
 
         Set<String> potenciaActual = new LinkedHashSet<>(base);
@@ -1059,7 +1149,6 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             potenciaActual = nuevaPotencia;
         }
 
-        // Mostrar resultado
         StringBuilder sb = new StringBuilder("L⁺ hasta L^" + n + " = { ");
         for (String palabra : resultado) {
             sb.append(palabra).append(", ");
@@ -1138,6 +1227,10 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_concatenacion;
     private javax.swing.JLabel lbl_longitud_der;
     private javax.swing.JLabel lbl_longitud_izq;
+    private javax.swing.JLabel lenguaje1apertura;
+    private javax.swing.JLabel lenguaje1cierre;
+    private javax.swing.JLabel lenguaje2apertura;
+    private javax.swing.JLabel lenguaje2cierre;
     private javax.swing.JLabel n_cadena_invertida_der;
     private javax.swing.JLabel n_cadena_invertida_izq;
     private javax.swing.JLabel n_concatenacion;
