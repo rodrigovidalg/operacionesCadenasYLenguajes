@@ -1,44 +1,36 @@
-# 🧠 Proyecto: Operaciones con Cadenas y Lenguajes
+# 🧠 Proyecto: Operaciones con Cadenas y Lenguajes Formales
 
-Este proyecto implementa un sistema en Java con interfaz gráfica (Swing) que permite realizar operaciones clave con **cadenas**, **lenguajes formales**, y la **simulación de un autómata finito determinista (AFD)**, en el contexto del curso **Lenguajes Formales y Autómatas**.
+Este proyecto en Java incluye una **interfaz gráfica (Swing)** para realizar operaciones fundamentales sobre **cadenas**, **lenguajes formales** y la **simulación de autómatas finitos deterministas (AFD)**. Fue desarrollado en el contexto del curso **Lenguajes Formales y Autómatas** y permite aplicar conceptos teóricos de forma práctica.
 
----
-
-## 📌 FASE III – Desarrollo del sistema
+## 📌 Fase III – Desarrollo del sistema
 
 ### ✅ Introducción
 
-En esta fase se desarrolló una aplicación gráfica en Java que permite realizar múltiples operaciones relacionadas con **lenguajes formales y autómatas finitos**. El sistema fue implementado utilizando **Apache NetBeans**, con componentes `Swing`, y empaquetado como `.jar` para facilitar su distribución.
+Se desarrolló una aplicación gráfica en Java usando **Apache NetBeans** y componentes de **Swing**, empaquetada como un archivo `.jar` para facilitar su distribución y uso. La aplicación permite realizar operaciones sobre alfabetos, cadenas, y lenguajes formales, así como simular el comportamiento de autómatas finitos.
 
-El desarrollo permitió aplicar los conceptos vistos en clase de forma práctica, incluyendo alfabetos, cadenas, lenguajes, operaciones entre lenguajes, cerraduras, potencias, inversas, y simulaciones de AFDs.
+## 🧭 Estructura general
 
----
-
-### 🧭 Estructura general
-
-El sistema cuenta con dos módulos principales accesibles desde el menú principal:
+La aplicación dispone de dos módulos principales accesibles desde el menú:
 
 - 🔹 **Operaciones con cadenas**
 - 🔹 **Operaciones con lenguajes**
 
-Cada módulo permite al usuario ingresar entradas y obtener resultados procesados en tiempo real.
+Ambos módulos permiten ingresar datos, ejecutar operaciones y visualizar resultados de forma interactiva y en tiempo real.
 
----
+## 🔹 Funcionalidades implementadas
 
-### 🔹 Funcionalidades implementadas
-
-#### 📍 Operaciones con cadenas:
-- Longitud
-- Inversa
+### Operaciones con cadenas
+- Calcular longitud
+- Obtener la inversa
 - Concatenación
-- Potencia (wⁿ)
-- Validaciones:
+- Potencia de cadenas (wⁿ)
+- Validaciones específicas:
   - Inicia con `0`
-  - Contiene `01`
+  - Contiene la subcadena `01`
   - Termina con `1`
 - Simulación visual paso a paso de un AFD
 
-#### 📍 Operaciones con lenguajes:
+### Operaciones con lenguajes
 - Unión (L1 ∪ L2)
 - Intersección (L1 ∩ L2)
 - Diferencia (L1 − L2)
@@ -48,11 +40,14 @@ Cada módulo permite al usuario ingresar entradas y obtener resultados procesado
 - Cerradura de Kleene (L*)
 - Cerradura positiva (L⁺)
 
----
+## 🚀 Cómo ejecutar el sistema
 
-### 🚀 Ejecución del sistema
+### Opción 1: Desde consola
 
-#### Opción 1: Desde consola
+    java -jar operacionesCadenasYLenguajes-1.0-SNAPSHOT.jar
 
-```bash
-java -jar operacionesCadenasYLenguajes-1.0-SNAPSHOT.jar
+### Opción 2: Usando archivo `.bat` (solo Windows)
+
+`programa.bat`
+
+> Asegúrate de tener instalada una versión de **Java 17 o superior** (`java -version`).
