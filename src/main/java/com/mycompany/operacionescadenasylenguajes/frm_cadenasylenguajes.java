@@ -6,6 +6,7 @@ package com.mycompany.operacionescadenasylenguajes;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -79,11 +80,20 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
         lenguaje1cierre = new javax.swing.JLabel();
         lenguaje2apertura = new javax.swing.JLabel();
         lenguaje2cierre = new javax.swing.JLabel();
+        txt_nueva_palabra = new javax.swing.JTextField();
+        btn_agregar = new javax.swing.JButton();
+        btn_eliminar = new javax.swing.JButton();
+        btn_mostrar = new javax.swing.JButton();
         AFD = new javax.swing.JPanel();
         txt_simulador_afd = new javax.swing.JTextField();
         btn_simular_afd = new javax.swing.JToggleButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         txt_resultado_afd = new javax.swing.JTextArea();
+        AFND = new javax.swing.JPanel();
+        txt_simulador_afnd = new javax.swing.JTextField();
+        btn_simular_afnd = new javax.swing.JToggleButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        txt_resultado_afnd = new javax.swing.JTextArea();
 
         jTextField1.setText("jTextField1");
 
@@ -241,7 +251,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         CadenasLayout.setVerticalGroup(
             CadenasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,7 +298,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
                 .addGroup(CadenasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Cadenas", Cadenas);
@@ -404,60 +414,103 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
         lenguaje2cierre.setForeground(new java.awt.Color(255, 255, 255));
         lenguaje2cierre.setText("}");
 
+        txt_nueva_palabra.setBackground(new java.awt.Color(51, 51, 51));
+        txt_nueva_palabra.setForeground(new java.awt.Color(255, 255, 255));
+        txt_nueva_palabra.setToolTipText("Palabra a agregar/eliminar");
+
+        btn_agregar.setBackground(new java.awt.Color(102, 102, 102));
+        btn_agregar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agregar.setText("Agregar");
+        btn_agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agregarActionPerformed(evt);
+            }
+        });
+
+        btn_eliminar.setBackground(new java.awt.Color(102, 102, 102));
+        btn_eliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_eliminar.setText("Eliminar");
+        btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminarActionPerformed(evt);
+            }
+        });
+
+        btn_mostrar.setBackground(new java.awt.Color(102, 102, 102));
+        btn_mostrar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_mostrar.setText("Mostrar");
+        btn_mostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_mostrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout LenguajesLayout = new javax.swing.GroupLayout(Lenguajes);
         Lenguajes.setLayout(LenguajesLayout);
         LenguajesLayout.setHorizontalGroup(
             LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LenguajesLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(LenguajesLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lenguaje1apertura)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_lenguaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lenguaje1cierre, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
-                        .addComponent(lenguaje2apertura)
-                        .addGap(5, 5, 5)
-                        .addComponent(txt_lenguaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lenguaje2cierre)
-                        .addGap(23, 23, 23))
-                    .addComponent(jScrollPane6)
-                    .addGroup(LenguajesLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(LenguajesLayout.createSequentialGroup()
-                                    .addComponent(btn_union)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btn_interseccion)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btn_diferencia)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btn_concatenacion))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, LenguajesLayout.createSequentialGroup()
-                                    .addComponent(txt_potencia_l1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btn_potencia_l1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btn_inversa_l1)))
+                            .addComponent(jScrollPane6)
                             .addGroup(LenguajesLayout.createSequentialGroup()
-                                .addComponent(txt_kleene_l1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_kleene_l1))
+                                .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(LenguajesLayout.createSequentialGroup()
+                                            .addComponent(btn_union)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(btn_interseccion)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(btn_diferencia)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(btn_concatenacion))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, LenguajesLayout.createSequentialGroup()
+                                            .addComponent(txt_potencia_l1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(btn_potencia_l1)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(btn_inversa_l1)))
+                                    .addGroup(LenguajesLayout.createSequentialGroup()
+                                        .addComponent(txt_kleene_l1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btn_kleene_l1))
+                                    .addGroup(LenguajesLayout.createSequentialGroup()
+                                        .addComponent(txt_positiva_l1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btn_positiva_l1)))
+                                .addGap(0, 173, Short.MAX_VALUE))))
+                    .addGroup(LenguajesLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(LenguajesLayout.createSequentialGroup()
-                                .addComponent(txt_positiva_l1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_positiva_l1)))
+                                .addComponent(lenguaje1apertura)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_lenguaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lenguaje1cierre, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(49, 49, 49)
+                                .addComponent(lenguaje2apertura)
+                                .addGap(5, 5, 5)
+                                .addComponent(txt_lenguaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lenguaje2cierre))
+                            .addGroup(LenguajesLayout.createSequentialGroup()
+                                .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txt_nueva_palabra)
+                                    .addComponent(btn_mostrar, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_agregar)
+                                    .addComponent(btn_eliminar))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         LenguajesLayout.setVerticalGroup(
             LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LenguajesLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LenguajesLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_lenguaje1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lenguaje1cierre, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -465,7 +518,15 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
                     .addComponent(lenguaje2cierre, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lenguaje2apertura, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_lenguaje2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_nueva_palabra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_agregar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_eliminar)
+                    .addComponent(btn_mostrar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(LenguajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_potencia_l1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_potencia_l1)
@@ -486,7 +547,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
                     .addComponent(btn_concatenacion))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
 
         jTabbedPane1.addTab("Lenguajes", Lenguajes);
@@ -532,7 +593,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
                 .addGroup(AFDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AFDLayout.createSequentialGroup()
-                        .addGap(0, 404, Short.MAX_VALUE)
+                        .addGap(0, 416, Short.MAX_VALUE)
                         .addComponent(btn_simular_afd))
                     .addComponent(txt_simulador_afd, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -546,28 +607,68 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
                 .addComponent(btn_simular_afd)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         jScrollPane5.getAccessibleContext().setAccessibleName("");
 
         jTabbedPane1.addTab("AFD", AFD);
 
+        AFND.setBackground(new java.awt.Color(0, 0, 0));
+
+        txt_simulador_afnd.setBackground(new java.awt.Color(51, 51, 51));
+        txt_simulador_afnd.setForeground(new java.awt.Color(255, 255, 255));
+
+        btn_simular_afnd.setBackground(new java.awt.Color(102, 102, 102));
+        btn_simular_afnd.setForeground(new java.awt.Color(255, 255, 255));
+        btn_simular_afnd.setText("Procesar");
+        btn_simular_afnd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_simular_afndActionPerformed(evt);
+            }
+        });
+
+        txt_resultado_afnd.setBackground(new java.awt.Color(51, 51, 51));
+        txt_resultado_afnd.setColumns(20);
+        txt_resultado_afnd.setForeground(new java.awt.Color(255, 255, 255));
+        txt_resultado_afnd.setRows(5);
+        jScrollPane7.setViewportView(txt_resultado_afnd);
+
+        javax.swing.GroupLayout AFNDLayout = new javax.swing.GroupLayout(AFND);
+        AFND.setLayout(AFNDLayout);
+        AFNDLayout.setHorizontalGroup(
+            AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AFNDLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btn_simular_afnd)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+                    .addComponent(txt_simulador_afnd, javax.swing.GroupLayout.Alignment.LEADING))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        AFNDLayout.setVerticalGroup(
+            AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AFNDLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(txt_simulador_afnd, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(btn_simular_afnd)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(92, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("AFND", AFND);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+            .addComponent(jTabbedPane1)
         );
 
         pack();
@@ -1013,13 +1114,13 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     private void btn_inversa_l1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inversa_l1ActionPerformed
         // TODO add your handling code here:  
         String textoL1 = this.txt_lenguaje1.getText().trim();
-        String[] elementos = textoL1.split(",");
+        String[] elementos = textoL1.split(",",-1);
 
         Set<String> inversa = new LinkedHashSet<>();
 
         for (String palabra : elementos) {
             palabra = palabra.trim();
-            if (palabra.isEmpty()) {
+            if (palabra.equals("") || palabra.equals("λ")) {
                 inversa.add("λ"); // la inversa de λ es λ
             } else {
                 StringBuilder invertida = new StringBuilder(palabra).reverse();
@@ -1162,6 +1263,140 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_positiva_l1ActionPerformed
 
+    private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
+        // TODO add your handling code here:
+        String nueva = txt_nueva_palabra.getText().trim();
+        String contenidoActual = txt_lenguaje1.getText().trim();
+
+        if (nueva.isEmpty()) {
+            txt_resultado_lenguajes.setText("⚠️ Ingresa una palabra para agregar.");
+            return;
+        }
+
+        Set<String> lenguaje = new LinkedHashSet<>(Arrays.asList(contenidoActual.split(",", -1)));
+        lenguaje.add(nueva);
+
+        txt_lenguaje1.setText(String.join(",", lenguaje));
+
+    }//GEN-LAST:event_btn_agregarActionPerformed
+
+    private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
+        // TODO add your handling code here:
+        String eliminar = txt_nueva_palabra.getText().trim();
+        String contenidoActual = txt_lenguaje1.getText().trim();
+
+        if (eliminar.isEmpty()) {
+            txt_resultado_lenguajes.setText("⚠️ Ingresa una palabra para eliminar.");
+            return;
+        }
+
+        Set<String> lenguaje = new LinkedHashSet<>(Arrays.asList(contenidoActual.split(",", -1)));
+        if (lenguaje.remove(eliminar)) {
+            txt_lenguaje1.setText(String.join(",", lenguaje));
+        } else {
+            txt_resultado_lenguajes.setText("⚠️ La palabra no existe en el lenguaje.");
+        }
+
+    }//GEN-LAST:event_btn_eliminarActionPerformed
+
+    private void btn_simular_afndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simular_afndActionPerformed
+        // TODO add your handling code here:
+        String cadena = txt_simulador_afnd.getText().trim();
+        String estado = "A";
+        StringBuilder recorrido = new StringBuilder();
+
+        for (int i = 0; i < cadena.length(); i++) {
+            char simbolo = cadena.charAt(i);
+            recorrido.append("Símbolo leído: ").append(simbolo).append("\n");
+            recorrido.append("Estado actual: ").append(estado).append("\n");
+
+            switch (estado) {
+                case "A":
+                    if (simbolo == 'a') {
+                        estado = "B";
+                    } else if (simbolo == 'b' || simbolo == 'c') {
+                        estado = "A";
+                    } else {
+                        recorrido.append("❌ Transición inválida desde A con ").append(simbolo).append("\n");
+                        txt_resultado_afnd.setText(recorrido.toString());
+                        return;
+                    }
+                    break;
+
+                case "B":
+                    if (simbolo == 'a') {
+                        estado = "B";
+                    } else if (simbolo == 'b') {
+                        estado = "C";
+                    } else if (simbolo == 'c') {
+                        estado = "A";
+                    } else {
+                        recorrido.append("❌ Transición inválida desde B con ").append(simbolo).append("\n");
+                        txt_resultado_afnd.setText(recorrido.toString());
+                        return;
+                    }
+                    break;
+
+                case "C":
+                    if (simbolo == 'a') {
+                        estado = "B";
+                    } else if (simbolo == 'b' || simbolo == 'c') {
+                        estado = "A";
+                    } else if (simbolo == 'z') {
+                        estado = "D";
+                    } else {
+                        recorrido.append("❌ Transición inválida desde C con ").append(simbolo).append("\n");
+                        txt_resultado_afnd.setText(recorrido.toString());
+                        return;
+                    }
+                    break;
+
+                case "D":
+                    recorrido.append("⚠️ Estado final alcanzado. No hay más transiciones.\n");
+                    break;
+
+                default:
+                    recorrido.append("⚠️ Estado desconocido\n");
+                    txt_resultado_afnd.setText(recorrido.toString());
+                    return;
+            }
+
+            recorrido.append("Transición exitosa → Nuevo estado: ").append(estado).append("\n\n");
+        }
+
+        recorrido.append("Estado final: ").append(estado).append("\n");
+
+        if (estado.equals("D")) {
+            recorrido.append("✅ Cadena ACEPTADA (termina en estado D)");
+        } else {
+            recorrido.append("❌ Cadena RECHAZADA (no termina en D)");
+        }
+
+        txt_resultado_afnd.setText(recorrido.toString());
+    }//GEN-LAST:event_btn_simular_afndActionPerformed
+
+    private void btn_mostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mostrarActionPerformed
+        // TODO add your handling code here:
+        String contenidoActual = txt_lenguaje1.getText().trim();
+        Set<String> lenguaje = new LinkedHashSet<>(Arrays.asList(contenidoActual.split(",", -1)));
+
+        StringBuilder resultado = new StringBuilder("L1 = { ");
+        for (String palabra : lenguaje) {
+            if (palabra.isEmpty()) {
+                resultado.append("λ, ");
+            } else {
+                resultado.append(palabra).append(", ");
+            }
+        }
+        if (!lenguaje.isEmpty()) {
+            resultado.setLength(resultado.length() - 2); // quitar última coma
+        }
+        resultado.append(" }");
+
+        txt_resultado_lenguajes.setText(resultado.toString());
+
+    }//GEN-LAST:event_btn_mostrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1199,20 +1434,25 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AFD;
+    private javax.swing.JPanel AFND;
     private javax.swing.JPanel Cadenas;
     private javax.swing.JPanel Lenguajes;
+    private javax.swing.JButton btn_agregar;
     private javax.swing.JButton btn_concatenacion;
     private javax.swing.JButton btn_concatenar;
     private javax.swing.JButton btn_diferencia;
+    private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_interseccion;
     private javax.swing.JButton btn_inversa_l1;
     private javax.swing.JButton btn_kleene_l1;
+    private javax.swing.JButton btn_mostrar;
     private javax.swing.JButton btn_positiva_l1;
     private javax.swing.JButton btn_potencia_der;
     private javax.swing.JButton btn_potencia_izq;
     private javax.swing.JButton btn_potencia_l1;
     private javax.swing.JButton btn_procesar;
     private javax.swing.JToggleButton btn_simular_afd;
+    private javax.swing.JToggleButton btn_simular_afnd;
     private javax.swing.JButton btn_union;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1220,6 +1460,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lbl_cadenainvertida_der;
@@ -1243,12 +1484,15 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     private javax.swing.JTextField txt_kleene_l1;
     private javax.swing.JTextField txt_lenguaje1;
     private javax.swing.JTextField txt_lenguaje2;
+    private javax.swing.JTextField txt_nueva_palabra;
     private javax.swing.JTextField txt_positiva_l1;
     private javax.swing.JTextField txt_potencia_der;
     private javax.swing.JTextField txt_potencia_izq;
     private javax.swing.JTextField txt_potencia_l1;
     private javax.swing.JTextArea txt_resultado_afd;
+    private javax.swing.JTextArea txt_resultado_afnd;
     private javax.swing.JTextArea txt_resultado_lenguajes;
     private javax.swing.JTextField txt_simulador_afd;
+    private javax.swing.JTextField txt_simulador_afnd;
     // End of variables declaration//GEN-END:variables
 }
