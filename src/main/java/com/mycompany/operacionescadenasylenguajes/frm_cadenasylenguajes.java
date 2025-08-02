@@ -90,10 +90,10 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         txt_resultado_afd = new javax.swing.JTextArea();
         AFND = new javax.swing.JPanel();
-        txt_simulador_afnd = new javax.swing.JTextField();
-        btn_simular_afnd = new javax.swing.JToggleButton();
+        txt_simulador_afd2 = new javax.swing.JTextField();
+        btn_simular_afd2 = new javax.swing.JToggleButton();
         jScrollPane7 = new javax.swing.JScrollPane();
-        txt_resultado_afnd = new javax.swing.JTextArea();
+        txt_resultado_afd2 = new javax.swing.JTextArea();
 
         jTextField1.setText("jTextField1");
 
@@ -612,27 +612,27 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
         jScrollPane5.getAccessibleContext().setAccessibleName("");
 
-        jTabbedPane1.addTab("AFD", AFD);
+        jTabbedPane1.addTab("AFD1", AFD);
 
         AFND.setBackground(new java.awt.Color(0, 0, 0));
 
-        txt_simulador_afnd.setBackground(new java.awt.Color(51, 51, 51));
-        txt_simulador_afnd.setForeground(new java.awt.Color(255, 255, 255));
+        txt_simulador_afd2.setBackground(new java.awt.Color(51, 51, 51));
+        txt_simulador_afd2.setForeground(new java.awt.Color(255, 255, 255));
 
-        btn_simular_afnd.setBackground(new java.awt.Color(102, 102, 102));
-        btn_simular_afnd.setForeground(new java.awt.Color(255, 255, 255));
-        btn_simular_afnd.setText("Procesar");
-        btn_simular_afnd.addActionListener(new java.awt.event.ActionListener() {
+        btn_simular_afd2.setBackground(new java.awt.Color(102, 102, 102));
+        btn_simular_afd2.setForeground(new java.awt.Color(255, 255, 255));
+        btn_simular_afd2.setText("Procesar");
+        btn_simular_afd2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_simular_afndActionPerformed(evt);
+                btn_simular_afd2ActionPerformed(evt);
             }
         });
 
-        txt_resultado_afnd.setBackground(new java.awt.Color(51, 51, 51));
-        txt_resultado_afnd.setColumns(20);
-        txt_resultado_afnd.setForeground(new java.awt.Color(255, 255, 255));
-        txt_resultado_afnd.setRows(5);
-        jScrollPane7.setViewportView(txt_resultado_afnd);
+        txt_resultado_afd2.setBackground(new java.awt.Color(51, 51, 51));
+        txt_resultado_afd2.setColumns(20);
+        txt_resultado_afd2.setForeground(new java.awt.Color(255, 255, 255));
+        txt_resultado_afd2.setRows(5);
+        jScrollPane7.setViewportView(txt_resultado_afd2);
 
         javax.swing.GroupLayout AFNDLayout = new javax.swing.GroupLayout(AFND);
         AFND.setLayout(AFNDLayout);
@@ -641,24 +641,24 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             .addGroup(AFNDLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btn_simular_afnd)
+                    .addComponent(btn_simular_afd2)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
-                    .addComponent(txt_simulador_afnd, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(txt_simulador_afd2, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         AFNDLayout.setVerticalGroup(
             AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AFNDLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(txt_simulador_afnd, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_simulador_afd2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(btn_simular_afnd)
+                .addComponent(btn_simular_afd2)
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(92, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("AFND", AFND);
+        jTabbedPane1.addTab("AFD2", AFND);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1299,9 +1299,9 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_eliminarActionPerformed
 
-    private void btn_simular_afndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simular_afndActionPerformed
+    private void btn_simular_afd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simular_afd2ActionPerformed
         // TODO add your handling code here:
-        String cadena = txt_simulador_afnd.getText().trim();
+        String cadena = txt_simulador_afd2.getText().trim();
         String estado = "A";
         StringBuilder recorrido = new StringBuilder();
 
@@ -1318,7 +1318,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
                         estado = "A";
                     } else {
                         recorrido.append("❌ Transición inválida desde A con ").append(simbolo).append("\n");
-                        txt_resultado_afnd.setText(recorrido.toString());
+                        txt_resultado_afd2.setText(recorrido.toString());
                         return;
                     }
                     break;
@@ -1332,7 +1332,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
                         estado = "A";
                     } else {
                         recorrido.append("❌ Transición inválida desde B con ").append(simbolo).append("\n");
-                        txt_resultado_afnd.setText(recorrido.toString());
+                        txt_resultado_afd2.setText(recorrido.toString());
                         return;
                     }
                     break;
@@ -1346,7 +1346,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
                         estado = "D";
                     } else {
                         recorrido.append("❌ Transición inválida desde C con ").append(simbolo).append("\n");
-                        txt_resultado_afnd.setText(recorrido.toString());
+                        txt_resultado_afd2.setText(recorrido.toString());
                         return;
                     }
                     break;
@@ -1357,7 +1357,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
                 default:
                     recorrido.append("⚠️ Estado desconocido\n");
-                    txt_resultado_afnd.setText(recorrido.toString());
+                    txt_resultado_afd2.setText(recorrido.toString());
                     return;
             }
 
@@ -1372,8 +1372,8 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
             recorrido.append("❌ Cadena RECHAZADA (no termina en D)");
         }
 
-        txt_resultado_afnd.setText(recorrido.toString());
-    }//GEN-LAST:event_btn_simular_afndActionPerformed
+        txt_resultado_afd2.setText(recorrido.toString());
+    }//GEN-LAST:event_btn_simular_afd2ActionPerformed
 
     private void btn_mostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mostrarActionPerformed
         // TODO add your handling code here:
@@ -1452,7 +1452,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     private javax.swing.JButton btn_potencia_l1;
     private javax.swing.JButton btn_procesar;
     private javax.swing.JToggleButton btn_simular_afd;
-    private javax.swing.JToggleButton btn_simular_afnd;
+    private javax.swing.JToggleButton btn_simular_afd2;
     private javax.swing.JButton btn_union;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1490,9 +1490,9 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     private javax.swing.JTextField txt_potencia_izq;
     private javax.swing.JTextField txt_potencia_l1;
     private javax.swing.JTextArea txt_resultado_afd;
-    private javax.swing.JTextArea txt_resultado_afnd;
+    private javax.swing.JTextArea txt_resultado_afd2;
     private javax.swing.JTextArea txt_resultado_lenguajes;
     private javax.swing.JTextField txt_simulador_afd;
-    private javax.swing.JTextField txt_simulador_afnd;
+    private javax.swing.JTextField txt_simulador_afd2;
     // End of variables declaration//GEN-END:variables
 }

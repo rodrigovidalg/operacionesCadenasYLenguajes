@@ -846,8 +846,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="AFD">
-                <Property name="tabTitle" type="java.lang.String" value="AFD"/>
+              <JTabbedPaneConstraints tabName="AFD1">
+                <Property name="tabTitle" type="java.lang.String" value="AFD1"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -951,8 +951,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="AFND">
-                <Property name="tabTitle" type="java.lang.String" value="AFND"/>
+              <JTabbedPaneConstraints tabName="AFD2">
+                <Property name="tabTitle" type="java.lang.String" value="AFD2"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -963,9 +963,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="btn_simular_afnd" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_simular_afd2" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane7" alignment="0" pref="438" max="32767" attributes="0"/>
-                          <Component id="txt_simulador_afnd" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txt_simulador_afd2" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="29" max="32767" attributes="0"/>
                   </Group>
@@ -975,9 +975,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="txt_simulador_afnd" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="txt_simulador_afd2" min="-2" pref="33" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="btn_simular_afnd" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_simular_afd2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="jScrollPane7" min="-2" pref="185" max="-2" attributes="0"/>
                       <EmptySpace pref="92" max="32767" attributes="0"/>
@@ -986,7 +986,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="txt_simulador_afnd">
+            <Component class="javax.swing.JTextField" name="txt_simulador_afd2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
@@ -996,7 +996,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btn_simular_afnd">
+            <Component class="javax.swing.JToggleButton" name="btn_simular_afd2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="66" red="66" type="rgb"/>
@@ -1007,7 +1007,7 @@
                 <Property name="text" type="java.lang.String" value="Procesar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_simular_afndActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_simular_afd2ActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane7">
@@ -1017,7 +1017,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="txt_resultado_afnd">
+                <Component class="javax.swing.JTextArea" name="txt_resultado_afd2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
