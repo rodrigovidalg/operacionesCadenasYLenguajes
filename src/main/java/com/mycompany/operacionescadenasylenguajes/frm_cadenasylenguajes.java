@@ -9,13 +9,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import javax.swing.JFileChooser;
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.JOptionPane;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.HashMap;
+import java.util.ArrayList;
 /**
  *
  * @author user
  */
 public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
+    private java.util.ArrayList<String> listaExpresiones;
+    private java.util.ArrayList<String> listaCadenas;
     /**
      * Creates new form frm_cadenasylenguajes
      */
@@ -33,7 +45,6 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Cadenas = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -94,8 +105,18 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
         btn_simular_afd2 = new javax.swing.JToggleButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         txt_resultado_afd2 = new javax.swing.JTextArea();
-
-        jTextField1.setText("jTextField1");
+        jPanel1 = new javax.swing.JPanel();
+        btnCargarExpresiones = new javax.swing.JButton();
+        lblTituloExpresiones = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        txtExpresionesCargadas = new javax.swing.JTextArea();
+        lblTituloCadenas = new javax.swing.JLabel();
+        btnCargarCadenas = new javax.swing.JButton();
+        lblArchivoCadenas = new javax.swing.JLabel();
+        lblTituloAnalisis = new javax.swing.JLabel();
+        btnAnalizar = new javax.swing.JButton();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        txtResultados = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -660,6 +681,115 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("AFD2", AFND);
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+
+        btnCargarExpresiones.setText("Cargar Archivo (.txt)");
+        btnCargarExpresiones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarExpresionesActionPerformed(evt);
+            }
+        });
+
+        lblTituloExpresiones.setBackground(new java.awt.Color(0, 0, 0));
+        lblTituloExpresiones.setForeground(new java.awt.Color(255, 255, 255));
+        lblTituloExpresiones.setText("1. Cargar Expresiones Regulares");
+
+        txtExpresionesCargadas.setColumns(20);
+        txtExpresionesCargadas.setRows(5);
+        jScrollPane8.setViewportView(txtExpresionesCargadas);
+
+        lblTituloCadenas.setBackground(new java.awt.Color(0, 0, 0));
+        lblTituloCadenas.setForeground(new java.awt.Color(255, 255, 255));
+        lblTituloCadenas.setText("2. Cargar Cadenas a Validar");
+
+        btnCargarCadenas.setText("Cargar Archivo (.txt)");
+        btnCargarCadenas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarCadenasActionPerformed(evt);
+            }
+        });
+
+        lblArchivoCadenas.setBackground(new java.awt.Color(0, 0, 0));
+        lblArchivoCadenas.setForeground(new java.awt.Color(255, 255, 255));
+        lblArchivoCadenas.setText("Archivo: (ninguno)");
+
+        lblTituloAnalisis.setBackground(new java.awt.Color(0, 0, 0));
+        lblTituloAnalisis.setForeground(new java.awt.Color(255, 255, 255));
+        lblTituloAnalisis.setText("3. Ejecutar y Ver Resultados");
+
+        btnAnalizar.setText("Analizar Cadenas");
+        btnAnalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnalizarActionPerformed(evt);
+            }
+        });
+
+        txtResultados.setColumns(20);
+        txtResultados.setRows(5);
+        jScrollPane9.setViewportView(txtResultados);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(lblTituloExpresiones)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addComponent(btnCargarExpresiones)
+                .addGap(60, 60, 60))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane8)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblTituloAnalisis)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAnalizar)
+                        .addGap(63, 63, 63))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblTituloCadenas)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblArchivoCadenas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnCargarCadenas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(47, 47, 47))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(btnCargarExpresiones))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(lblTituloExpresiones)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTituloCadenas)
+                    .addComponent(btnCargarCadenas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblArchivoCadenas)
+                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTituloAnalisis)
+                    .addComponent(btnAnalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Thomson", jPanel1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -681,7 +811,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
     private void btn_procesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_procesarActionPerformed
         // TODO add your handling code here:
-
+        
         // =======================
         // LADO IZQUIERDO
         // =======================
@@ -1397,6 +1527,120 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_mostrarActionPerformed
 
+    private void btnCargarExpresionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarExpresionesActionPerformed
+        // TODO add your handling code here:
+            JFileChooser selector = new JFileChooser();
+            selector.setDialogTitle("Selecciona el archivo de expresiones (.txt)");
+
+            // Mostramos el diálogo para abrir archivo
+            if (selector.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+                File archivo = selector.getSelectedFile();
+                listaExpresiones = new ArrayList<>();
+
+                try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+                    String linea;
+                    StringBuilder expresionesTexto = new StringBuilder();
+
+                    while ((linea = br.readLine()) != null) {
+                        if (!linea.trim().isEmpty()) {
+                            listaExpresiones.add(linea.trim());
+                            expresionesTexto.append(linea.trim()).append("\n");
+                        }
+                    }
+
+                    txtExpresionesCargadas.setText(expresionesTexto.toString());
+                    JOptionPane.showMessageDialog(this, "Archivo de expresiones cargado con éxito.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(this, "Error al leer el archivo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+    }//GEN-LAST:event_btnCargarExpresionesActionPerformed
+
+    private void btnCargarCadenasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarCadenasActionPerformed
+        // TODO add your handling code here:
+        JFileChooser selector = new JFileChooser();
+        selector.setDialogTitle("Selecciona el archivo de cadenas (.txt)");
+
+        if (selector.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            File archivo = selector.getSelectedFile();
+            lblArchivoCadenas.setText("Archivo: " + archivo.getName());
+            listaCadenas = new ArrayList<>(); // Inicializamos la lista
+
+            try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+                String linea;
+                while ((linea = br.readLine()) != null) {
+                    listaCadenas.add(linea);
+                }
+                JOptionPane.showMessageDialog(this, "Archivo de cadenas cargado con éxito.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(this, "Error al leer el archivo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnCargarCadenasActionPerformed
+
+    private void btnAnalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizarActionPerformed
+        // TODO add your handling code here:
+        // 1. Validar que los datos estén cargados
+        if (listaExpresiones == null || listaExpresiones.isEmpty() ||
+            listaCadenas == null || listaCadenas.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debes cargar primero un archivo de expresiones y uno de cadenas.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // 2. Preparar estructuras para resultados
+        HashMap<String, Integer> resumenConteo = new HashMap<>();
+        HashMap<String, ArrayList<String>> detalleCoincidencias = new HashMap<>();
+
+        // 3. Inicializar las estructuras
+        for (String exp : listaExpresiones) {
+            resumenConteo.put(exp, 0);
+            detalleCoincidencias.put(exp, new ArrayList<>());
+        }
+
+        // 4. Procesar cada cadena contra cada expresión
+        for (String cadena : listaCadenas) {
+            for (String exp : listaExpresiones) {
+                try {
+                    // Usamos Pattern.matches() que es un atajo para compilar y hacer match completo
+                    if (Pattern.matches(exp, cadena)) {
+                        resumenConteo.put(exp, resumenConteo.get(exp) + 1);
+                        detalleCoincidencias.get(exp).add(cadena);
+                    }
+                } catch (java.util.regex.PatternSyntaxException e) {
+                    txtResultados.setText("ERROR: La expresión regular '" + exp + "' está mal escrita.\n\nDetalle: " + e.getMessage());
+                    return;
+                }
+            }
+        }
+
+        StringBuilder resultadoFinal = new StringBuilder();
+        resultadoFinal.append("✅ ANÁLISIS COMPLETADO ✅\n");
+        resultadoFinal.append("===============================\n\n");
+
+        resultadoFinal.append("--- RESUMEN DE COINCIDENCIAS ---\n");
+        for (String exp : resumenConteo.keySet()) {
+            resultadoFinal.append("Expresión '").append(exp).append("': ")
+                          .append(resumenConteo.get(exp)).append(" cadenas válidas.\n");
+        }
+
+        resultadoFinal.append("\n--- DETALLE DE COINCIDENCIAS ---\n");
+        for (String exp : detalleCoincidencias.keySet()) {
+            resultadoFinal.append("\nCadenas que cumplen con '").append(exp).append("':\n");
+            ArrayList<String> coincidencias = detalleCoincidencias.get(exp);
+            if (coincidencias.isEmpty()) {
+                resultadoFinal.append("  (Ninguna)\n");
+            } else {
+                for (String match : coincidencias) {
+                    resultadoFinal.append("  - \"").append(match).append("\"\n");
+                }
+            }
+        }
+
+        txtResultados.setText(resultadoFinal.toString());
+    }//GEN-LAST:event_btnAnalizarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1437,6 +1681,9 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     private javax.swing.JPanel AFND;
     private javax.swing.JPanel Cadenas;
     private javax.swing.JPanel Lenguajes;
+    private javax.swing.JButton btnAnalizar;
+    private javax.swing.JButton btnCargarCadenas;
+    private javax.swing.JButton btnCargarExpresiones;
     private javax.swing.JButton btn_agregar;
     private javax.swing.JButton btn_concatenacion;
     private javax.swing.JButton btn_concatenar;
@@ -1454,6 +1701,7 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     private javax.swing.JToggleButton btn_simular_afd;
     private javax.swing.JToggleButton btn_simular_afd2;
     private javax.swing.JButton btn_union;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1461,8 +1709,13 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblArchivoCadenas;
+    private javax.swing.JLabel lblTituloAnalisis;
+    private javax.swing.JLabel lblTituloCadenas;
+    private javax.swing.JLabel lblTituloExpresiones;
     private javax.swing.JLabel lbl_cadenainvertida_der;
     private javax.swing.JLabel lbl_cadenainvertida_izq;
     private javax.swing.JLabel lbl_concatenacion;
@@ -1479,6 +1732,8 @@ public class frm_cadenasylenguajes extends javax.swing.JFrame {
     private javax.swing.JLabel n_longitud_izq;
     private javax.swing.JLabel n_potencia_der;
     private javax.swing.JLabel n_potencia_izq;
+    private javax.swing.JTextArea txtExpresionesCargadas;
+    private javax.swing.JTextArea txtResultados;
     private javax.swing.JTextField txt_cadena_der;
     private javax.swing.JTextField txt_cadena_izq;
     private javax.swing.JTextField txt_kleene_l1;
